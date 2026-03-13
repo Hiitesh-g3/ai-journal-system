@@ -10,13 +10,13 @@ dotenv.config();
 
 const app = express();
 
-
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
       "https://ai-journal-system-ten.vercel.app"
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
 );
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 
-connectDB();
+// connectDB();
 
 app.get("/", (req, res) => {
   res.send("AI Journal Backend is running 🚀");
@@ -38,6 +38,6 @@ app.get("/api/health", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+connectDB().then(() => {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });
