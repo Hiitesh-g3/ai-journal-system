@@ -20,6 +20,10 @@ app.use(morgan("dev"));
 
 connectDB();
 
+app.get("/", (req, res) => {
+  res.send("AI Journal Backend is running 🚀");
+});
+
 app.use("/api/journal", journalRoutes);
 
 app.get("/api/health", (req, res) => {
