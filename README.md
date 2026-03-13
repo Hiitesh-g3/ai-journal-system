@@ -16,6 +16,12 @@ The system stores journal entries, analyzes emotions using an LLM, and provides 
 
 ---
 
+## 🚀 Deployment
+- **Frontend:** [\[Your Vercel Link\]](https://ai-journal-system-ten.vercel.app/)
+- **Backend:** [\[Your Render Link\]](https://ai-journal-system-elbc.onrender.com/)
+
+---
+
 # Tech Stack
 
 ### Frontend
@@ -24,6 +30,7 @@ The system stores journal entries, analyzes emotions using an LLM, and provides 
 * React Router
 * TanStack Query
 * Axios
+* React Context API (AuthContext) 
 
 ### Backend
 
@@ -62,6 +69,7 @@ ai-journal-system
 │       ├── hooks
 │       ├── components
 │       ├── pages
+|       |__ context
 │       └── layout
 │
 ├── README.md
@@ -142,7 +150,7 @@ Example response:
 ## 1. Clone Repository
 
 ```
-git clone <repo-url>
+git clone https://github.com/Hiitesh-g3/ai-journal-system
 cd ai-journal-system
 ```
 
@@ -158,9 +166,9 @@ npm install
 Create `.env` file:
 
 ```
-PORT=5000
-MONGO_URI=your_mongodb_connection
-GEMINI_API_KEY=your_api_key
+PORT
+MONGO_URI
+GEMINI_API_KEY
 ```
 
 Start backend:
@@ -203,6 +211,3 @@ http://localhost:5000
 
 ---
 
-# Author
-
-Hiitesh Gour
